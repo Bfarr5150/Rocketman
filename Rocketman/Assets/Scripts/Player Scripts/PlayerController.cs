@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     public GameObject player;
     public Rigidbody rocket;
     public float rotationSpeed;
-    public float amount;
+    public float ThrustAmount;
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
         {
             ThrustForward();
         }
+        Rotation(transform, -xAxis * rotationSpeed);
     }
 
     private void ClampVelocity()
@@ -36,16 +37,22 @@ public class PlayerController : MonoBehaviour
 
     private void ThrustForward()
     {
-        Vector3 boost = transform.up * amount;
+        Vector3 boost = transform.up * ThrustAmount;
         //Add boost when holding down space
         rocket.AddForce(boost);
     }
 
+    private void Rotation(Transform r, float rspeed)
+    {
+        r.Rotate(0, 0, rspeed);
+    }
 
 
 
 
 }
 
+
+//check velocity in the previous frame to landing
 //Progressive momentum
 //

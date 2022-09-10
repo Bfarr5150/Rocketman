@@ -305,7 +305,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 693751043}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.77, y: 0, z: 7.96}
+  m_LocalPosition: {x: 0.14, y: 0.73, z: 7.96}
   m_LocalScale: {x: 42.099796, y: 1, z: 17.954}
   m_Children: []
   m_Father: {fileID: 0}
@@ -364,7 +364,7 @@ Camera:
   far clip plane: 20
   field of view: 26.991467
   orthographic: 1
-  orthographic size: 9.446046
+  orthographic size: 10.990094
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -405,9 +405,9 @@ GameObject:
   - component: {fileID: 2110814221}
   - component: {fileID: 2110814220}
   - component: {fileID: 2110814219}
-  - component: {fileID: 2110814218}
   - component: {fileID: 2110814217}
   - component: {fileID: 2110814222}
+  - component: {fileID: 2110814218}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -429,10 +429,10 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 56
   m_CollisionDetection: 0
---- !u!136 &2110814218
-CapsuleCollider:
+--- !u!65 &2110814218
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -441,10 +441,9 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  serializedVersion: 2
+  m_Size: {x: 1.0000001, y: 1.9999999, z: 1.0000002}
+  m_Center: {x: 0.000000059604645, y: -1.7347235e-18, z: -0.0000005662441}
 --- !u!23 &2110814219
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -502,8 +501,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2110814216}
   m_LocalRotation: {x: 0.006370133, y: 0.009424419, z: -0.000060038685, w: 0.9999353}
-  m_LocalPosition: {x: 0, y: 11.26, z: 5.08}
-  m_LocalScale: {x: 1, y: 1.2305, z: 1}
+  m_LocalPosition: {x: 0.0683, y: 11.2395, z: 5.0784}
+  m_LocalScale: {x: 1.136769, y: 1.2510248, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -522,5 +521,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 2110814216}
   rocket: {fileID: 2110814217}
-  rotationSpeed: 10
-  amount: 15
+  rotationSpeed: 1
+  ThrustAmount: 8
