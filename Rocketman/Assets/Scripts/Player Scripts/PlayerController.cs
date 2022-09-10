@@ -4,30 +4,30 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    //Variables
     public GameObject player;
     public Rigidbody rocket;
     public float rotationSpeed;
     public float ThrustAmount;
 
-    // Start is called before the first frame update
+
     void Start()
     {
         rocket = player.GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
-        float yAxis = Input.GetAxis("Jump");
         float xAxis = Input.GetAxis("Horizontal");
-        //transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
-        //ThrustForward(yAxis);
         if (Input.GetButton("Jump"))
         {
             ThrustForward();
         }
         Rotation(transform, -xAxis * rotationSpeed);
     }
+
+
+    #region Movement
 
     private void ThrustForward()
     {
@@ -41,6 +41,11 @@ public class PlayerController : MonoBehaviour
         r.Rotate(0, 0, rspeed);
     }
 
+    #endregion
+
+
+    #region Fail Conditions
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.relativeVelocity.magnitude > 10)
@@ -49,10 +54,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerStay (Collider side)
+    {
+        Destroy(gameObject);
+    }
+
+    #endregion
 
 }
-
-
-//check velocity in the previous frame to landing
-//Progressive momentum
-//

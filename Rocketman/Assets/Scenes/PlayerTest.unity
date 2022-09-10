@@ -408,6 +408,7 @@ GameObject:
   - component: {fileID: 2110814217}
   - component: {fileID: 2110814222}
   - component: {fileID: 2110814218}
+  - component: {fileID: 2110814223}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -523,3 +524,17 @@ MonoBehaviour:
   rocket: {fileID: 2110814217}
   rotationSpeed: 1
   ThrustAmount: 8
+--- !u!136 &2110814223
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2110814216}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5328307
+  m_Height: 2.3977218
+  m_Direction: 1
+  m_Center: {x: 0.0000033033034, y: 0.26844656, z: -0.00000053668396}
