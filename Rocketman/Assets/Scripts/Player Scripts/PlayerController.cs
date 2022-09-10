@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rocket = player.GetComponent<Rigidbody>();
-        
     }
 
     // Update is called once per frame
@@ -30,11 +29,6 @@ public class PlayerController : MonoBehaviour
         Rotation(transform, -xAxis * rotationSpeed);
     }
 
-    private void ClampVelocity()
-    {
-
-    }
-
     private void ThrustForward()
     {
         Vector3 boost = transform.up * ThrustAmount;
@@ -47,7 +41,13 @@ public class PlayerController : MonoBehaviour
         r.Rotate(0, 0, rspeed);
     }
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.relativeVelocity.magnitude > 10)
+        {
+            Destroy(gameObject);
+        }
+    }
 
 
 }
