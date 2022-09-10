@@ -18,8 +18,28 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(rotationSpeed * Time.deltaTime, 0, 0);
+        float yAxis = Input.GetAxis("Vertical");
+        float xAxis = Input.GetAxis("Horizontal");
+        //transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
+        ThrustForward(yAxis);
     }
+
+    private void ClampVelocity()
+    {
+
+    }
+
+    private void ThrustForward(float amount)
+    {
+        Vector3 boost = transform.up * amount;
+        //Add boost when holding down space
+        rocket.AddForce(boost);
+    }
+
+
+
+
+
 }
 
 //Progressive momentum
