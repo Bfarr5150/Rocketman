@@ -6,9 +6,14 @@ using UnityEngine.UI;
 public class Compass : MonoBehaviour
 {
     public RectTransform compassNeedle;
+    public RectTransform compassSpan;
+
     public Transform playerLoc;
     public Transform platformLoc;
-    public float platformWidth;
+    public Transform boundaryL;
+    public Transform boundaryR;
+
+    float platformWidth;
 
     // Update is called once per frame
     void Update()
@@ -20,6 +25,6 @@ public class Compass : MonoBehaviour
 
         Debug.Log(distancePercentage);
 
-        compassNeedle.anchoredPosition = new Vector2(distancePercentage * -200, 150f);
+        compassNeedle.anchoredPosition = new Vector2(distancePercentage * -400, 150f);
     }
 }
