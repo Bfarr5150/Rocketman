@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public GameObject player;
     public Rigidbody rocket;
     public float rotationSpeed;
+    public float amount;
 
     // Start is called before the first frame update
     void Start()
@@ -16,12 +17,16 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        float yAxis = Input.GetAxis("Vertical");
+        float yAxis = Input.GetAxis("Jump");
         float xAxis = Input.GetAxis("Horizontal");
         //transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
-        ThrustForward(yAxis);
+        //ThrustForward(yAxis);
+        if (Input.GetButton("Jump"))
+        {
+            ThrustForward();
+        }
     }
 
     private void ClampVelocity()
@@ -29,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void ThrustForward(float amount)
+    private void ThrustForward()
     {
         Vector3 boost = transform.up * amount;
         //Add boost when holding down space
