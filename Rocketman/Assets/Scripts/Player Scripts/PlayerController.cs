@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed;
     public float ThrustAmount;
 
+    public float gravityScale;
+    public static float gravity = -9.8f;
+
 
     void Start()
     {
@@ -18,6 +21,13 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(!rocket.useGravity)
+        {
+            Vector3 accelerationGravity = new Vector3(0, 1, 0);
+            Debug.Log("Fake Gravity");
+            rocket.AddForce(accelerationGravity * gravity * gravityScale, ForceMode.Acceleration);
+        }
+
         float xAxis = Input.GetAxis("Horizontal");
         if (Input.GetButton("Jump"))
         {
