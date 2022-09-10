@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject player;
+    public Rigidbody rocket;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,3 +19,6 @@ public class PlayerController : MonoBehaviour
         
     }
 }
+
+//Progressive momentum
+//
