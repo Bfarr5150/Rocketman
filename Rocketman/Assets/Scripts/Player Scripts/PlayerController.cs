@@ -29,13 +29,14 @@ public class PlayerController : MonoBehaviour
 
     #region Movement
 
+    //Apply upwards thrust to slow fall
     private void ThrustForward()
     {
         Vector3 boost = transform.up * ThrustAmount;
-        //Add boost when holding down space
         rocket.AddForce(boost);
     }
 
+    //Left-right rotation
     private void Rotation(Transform r, float rspeed)
     {
         r.Rotate(0, 0, rspeed);
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
     #region Fail Conditions
 
+    //Landing velocity
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.relativeVelocity.magnitude > 10)
@@ -54,11 +56,11 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    //Landing on side
     private void OnTriggerStay (Collider side)
     {
         Destroy(gameObject);
     }
 
     #endregion
-
 }
