@@ -32,7 +32,7 @@ public class Compass : MonoBehaviour
     void Update()
     {
         // Update compass needle realtive to percentage of the total distance of playfield player is from the left boundary
-        compassNeedle.anchoredPosition = new Vector2((((playerLoc.localPosition.x - boundaryL.localPosition.x) / stageWidth) * levelBoundIndicators.sizeDelta.x) - (levelBoundIndicators.sizeDelta.x / 2), 150f);
+        compassNeedle.anchoredPosition = new Vector2((((playerLoc.localPosition.x - boundaryL.localPosition.x) / stageWidth) * levelBoundIndicators.sizeDelta.x) - (levelBoundIndicators.sizeDelta.x / 2), compassNeedle.anchoredPosition.y);
 
         // Update platform indicator realtive to percentage of the total distance of playfield platform is from the left boundary
         platformIndicator.anchoredPosition = new Vector2((((platformLoc.localPosition.x - boundaryL.localPosition.x) / stageWidth) * levelBoundIndicators.sizeDelta.x) - (levelBoundIndicators.sizeDelta.x / 2), platformIndicator.anchoredPosition.y);
