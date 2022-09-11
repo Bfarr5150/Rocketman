@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     public float maxFuel = 100f;
     public float minFuel = 0f;
-    float currentFuel;
+    public static float currentFuel;
     public float fuelConsumedUpdate = .1f;
 
 
