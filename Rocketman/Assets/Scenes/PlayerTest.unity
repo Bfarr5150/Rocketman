@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!224 &602874812 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8552989711480571122, guid: a78c27918d74f764d9a5ff2bd82e25c4, type: 3}
+  m_PrefabInstance: {fileID: 1285106788}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &634949290
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,6 +327,7 @@ GameObject:
   - component: {fileID: 1132048967}
   - component: {fileID: 1132048966}
   - component: {fileID: 1132048965}
+  - component: {fileID: 1132048968}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -394,6 +400,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!4 &1241919233 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5816369317117353905, guid: ceadf11a6f0348042be24119a773a224, type: 3}
@@ -404,6 +411,21 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 3631680604087528992, guid: ceadf11a6f0348042be24119a773a224, type: 3}
   m_PrefabInstance: {fileID: 1657811560}
   m_PrefabAsset: {fileID: 0}
+=======
+--- !u!114 &1132048968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1132048964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9681d2e8beb8f7d438f452ed0f36ec83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 2110814216}
+>>>>>>> e69251af97689f220b76b1975fcd0723b9a6ba13
 --- !u!1001 &1285106788
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -499,8 +521,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 5573047503430020000, guid: a78c27918d74f764d9a5ff2bd82e25c4, type: 3}
+      propertyPath: boundaryL
+      value: 
+      objectReference: {fileID: 1292684625}
+    - target: {fileID: 5573047503430020000, guid: a78c27918d74f764d9a5ff2bd82e25c4, type: 3}
+      propertyPath: boundaryR
+      value: 
+      objectReference: {fileID: 1292684625}
+    - target: {fileID: 5573047503430020000, guid: a78c27918d74f764d9a5ff2bd82e25c4, type: 3}
+      propertyPath: playerLoc
+      value: 
+      objectReference: {fileID: 2110814221}
+    - target: {fileID: 5573047503430020000, guid: a78c27918d74f764d9a5ff2bd82e25c4, type: 3}
+      propertyPath: platformLoc
+      value: 
+      objectReference: {fileID: 602874812}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a78c27918d74f764d9a5ff2bd82e25c4, type: 3}
+<<<<<<< HEAD
 --- !u!1001 &1657811560
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -574,6 +613,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceadf11a6f0348042be24119a773a224, type: 3}
+=======
+--- !u!224 &1292684625 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7688610986013624603, guid: a78c27918d74f764d9a5ff2bd82e25c4, type: 3}
+  m_PrefabInstance: {fileID: 1285106788}
+  m_PrefabAsset: {fileID: 0}
+>>>>>>> e69251af97689f220b76b1975fcd0723b9a6ba13
 --- !u!1 &2110814216
 GameObject:
   m_ObjectHideFlags: 0
