@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
     public float rotationSpeed;
     public float ThrustAmount;
 
+    public Boost boostBar;
+
     public float gravityScale;
     public static float gravity = -9.8f;
 
@@ -26,6 +28,10 @@ public class PlayerController : MonoBehaviour
         rocket = player.GetComponent<Rigidbody>();
 
         currentFuel = maxFuel;
+
+        boostBar.SetMaxBoost(maxFuel);
+
+
         
     }
 
@@ -51,6 +57,12 @@ public class PlayerController : MonoBehaviour
             StopThrust();
         }
         Rotation(transform, -xAxis * rotationSpeed);
+
+        //Fuel updates
+        if (currentFuel > minFuel)
+        {
+            boostBar.SetBoost(currentFuel);
+        }
     }
 
    
@@ -70,6 +82,9 @@ public class PlayerController : MonoBehaviour
             StopThrust();
             return;
         }
+
+        //Set Boost Bar amount
+        boostBar.SetBoost(currentFuel);
 
         // Add thrust
         Vector3 boost = transform.up * ThrustAmount;
