@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log(currentFuel);
         // Use custom gravity scale if rigid body is not already simulating gravity.
         if(!rocket.useGravity)
         {
@@ -78,9 +79,7 @@ public class PlayerController : MonoBehaviour
 
     private void StopThrust()
     {
-
         rocketBoost.SetActive(false);
-        Debug.Log("Stop");
     }
 
     //Left-right rotation
@@ -97,7 +96,7 @@ public class PlayerController : MonoBehaviour
     //Landing velocity
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "SafeBlocking")
+        if (collision.gameObject.tag == "SafeBlocking" || collision.gameObject.tag == "Fuel")
         {
             return;
         }
@@ -112,7 +111,7 @@ public class PlayerController : MonoBehaviour
     //Landing on side
     private void OnTriggerStay (Collider side)
     {
-        if(side.gameObject.tag == "SafeBlocking")
+        if(side.gameObject.tag == "SafeBlocking" || side.gameObject.tag == "Fuel")
         {
             return;
         }
@@ -120,6 +119,20 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.SetActive(false);
             Time.timeScale = 0;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Fuel")
+        {
+            currentFuel += 10f;
+            if(currentFuel > maxFuel)
+            {
+                currentFuel = maxFuel;
+            }
+
+            Destroy(other.gameObject);
         }
     }
 
