@@ -588,6 +588,10 @@ PrefabInstance:
       propertyPath: platformLoc
       value: 
       objectReference: {fileID: 1959107208}
+    - target: {fileID: 9202654613458720088, guid: a78c27918d74f764d9a5ff2bd82e25c4, type: 3}
+      propertyPath: m_Navigation.m_Mode
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a78c27918d74f764d9a5ff2bd82e25c4, type: 3}
 --- !u!1001 &1645075465
