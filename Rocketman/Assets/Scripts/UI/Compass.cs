@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class Compass : MonoBehaviour
 {
     public RectTransform compassNeedle;
-    public RectTransform compassSpan;
-    public RectTransform levelBounds;
+    public RectTransform platformIndicator;
+    public RectTransform levelBoundIndicators;
 
     public Transform playerLoc;
     public Transform platformLoc;
@@ -15,27 +15,29 @@ public class Compass : MonoBehaviour
     public Transform boundaryR;
 
     float platformWidth;
+    float stageWidth;
 
     void Start()
     {
-        float stageWidth = boundaryR.localPosition.x - boundaryL.localPosition.x;
+        stageWidth = boundaryR.localPosition.x - boundaryL.localPosition.x;
         platformWidth = platformLoc.localScale.x;
 
         float platformWidthPercentage = platformWidth / stageWidth;
 
-        levelBounds.sizeDelta = new Vector2(512, levelBounds.sizeDelta.y);
-        compassSpan.sizeDelta = new Vector2(platformWidthPercentage * 512, compassSpan.sizeDelta.y);
+        // Set platform span indicator to cover an equal percentage of the space between boundary indicators as the actual platform spans inbetween the level bounds.
+        platformIndicator.sizeDelta = new Vector2(platformWidthPercentage * levelBoundIndicators.sizeDelta.x, platformIndicator.sizeDelta.y);
+
+        // Update platform indicator realitve to platform
+        platformIndicator.anchoredPosition = new Vector2((((platformLoc.localPosition.x - boundaryL.localPosition.x) / stageWidth) * levelBoundIndicators.sizeDelta.x) - (levelBoundIndicators.sizeDelta.x / 2), platformIndicator.anchoredPosition.y);
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distance = platformLoc.localPosition.x - playerLoc.localPosition.x;
-        distance += (platformWidth / 2);
-        float distancePercentage = (distance / platformWidth) - (.5f);
+        // Update compass needle realtive to percentage of the total distance of playfield player is from the left boundary
+        compassNeedle.anchoredPosition = new Vector2((((playerLoc.localPosition.x - boundaryL.localPosition.x) / stageWidth) * levelBoundIndicators.sizeDelta.x) - (levelBoundIndicators.sizeDelta.x / 2), 150f);
 
-        Debug.Log(distancePercentage);
-
-        compassNeedle.anchoredPosition = new Vector2(distancePercentage * -compassSpan.sizeDelta.x, 150f);
+        // Update platform indicator realtive to percentage of the total distance of playfield platform is from the left boundary
+        platformIndicator.anchoredPosition = new Vector2((((platformLoc.localPosition.x - boundaryL.localPosition.x) / stageWidth) * levelBoundIndicators.sizeDelta.x) - (levelBoundIndicators.sizeDelta.x / 2), platformIndicator.anchoredPosition.y);
     }
 }

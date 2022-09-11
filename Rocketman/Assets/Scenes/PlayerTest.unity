@@ -523,7 +523,8 @@ MonoBehaviour:
   player: {fileID: 2110814216}
   rocket: {fileID: 2110814217}
   rotationSpeed: 1
-  ThrustAmount: 8
+  ThrustAmount: 14
+  gravityScale: 2
 --- !u!136 &2110814223
 CapsuleCollider:
   m_ObjectHideFlags: 0

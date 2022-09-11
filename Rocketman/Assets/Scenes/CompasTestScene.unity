@@ -210,7 +210,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 58619149}
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 12.7, y: 3, z: 7.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 92118720}
   - component: {fileID: 92118719}
   m_Layer: 5
-  m_Name: LevelBounds
+  m_Name: BoundaryIndicators
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,7 +273,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: fc134bc45e4fb6545a7b9fd499230e2d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d0f4294fde56bf64c8d7c188891b95b5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -472,8 +472,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   compassNeedle: {fileID: 872843409}
-  compassSpan: {fileID: 1206427519}
-  levelBounds: {fileID: 92118718}
+  platformIndicator: {fileID: 1206427519}
+  levelBoundIndicators: {fileID: 92118718}
   playerLoc: {fileID: 1446953567}
   platformLoc: {fileID: 2120837316}
   boundaryL: {fileID: 679899445}
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 1206427521}
   - component: {fileID: 1206427520}
   m_Layer: 5
-  m_Name: CompassSpan
+  m_Name: PlatformIndicator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -513,7 +513,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 150}
-  m_SizeDelta: {x: 400, y: 512}
+  m_SizeDelta: {x: 512, y: 512}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206427520
 MonoBehaviour:
@@ -535,7 +535,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cd119658a288986408ba42a77d1a81fa, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 37365c4d918e77749b911907140e1f23, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -744,7 +744,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1446953563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.3, y: 3.3, z: 0}
+  m_LocalPosition: {x: 0, y: -0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1083,8 +1083,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2120837312}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.5, z: 0}
-  m_LocalScale: {x: 3.7334886, y: 1, z: 7.022626}
+  m_LocalPosition: {x: -17.6, y: -3.5, z: 0}
+  m_LocalScale: {x: 14.500175, y: 1, z: 7.022626}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
