@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public static float currentFuel;
     public float fuelConsumedUpdate = .1f;
 
-    public ParticleSystem rocketBoost;
+    public GameObject rocketBoost;
 
     void Start()
     {
@@ -43,25 +43,13 @@ public class PlayerController : MonoBehaviour
         float xAxis = Input.GetAxis("Horizontal");
         if (Input.GetButton("Jump"))
         {
-            
-
-            if (xAxis < 0 || xAxis > 0 && !rocketBoost.isPlaying)
-            {
-                rocketBoost.Play();
-            }
-            else if (rocketBoost.isPlaying)
-            {
-                rocketBoost.Stop();
-            }
             ThrustForward();
-
         }
-       
-      
-        
+        else
+        {
+            StopThrust();
+        }
         Rotation(transform, -xAxis * rotationSpeed);
-
-        
     }
 
    
@@ -75,22 +63,24 @@ public class PlayerController : MonoBehaviour
         // Consume and check fuel before we thrust
         currentFuel -= fuelConsumedUpdate;
 
-
-
-        Debug.Log(currentFuel);     // TEST ONLY
-
         if(currentFuel < minFuel)
         {
             currentFuel = minFuel;
+            StopThrust();
             return;
         }
 
         // Add thrust
         Vector3 boost = transform.up * ThrustAmount;
         rocket.AddForce(boost);
-        rocketBoost.Play();
-       
+        rocketBoost.SetActive(true);
+    }
 
+    private void StopThrust()
+    {
+
+        rocketBoost.SetActive(false);
+        Debug.Log("Stop");
     }
 
     //Left-right rotation
