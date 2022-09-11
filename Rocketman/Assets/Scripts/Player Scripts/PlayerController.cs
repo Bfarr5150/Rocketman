@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     public static float currentFuel;
     public float fuelConsumedUpdate = .1f;
 
-    public ParticleSystem rocketBoost;
+    public GameObject rocketBoost;
 
     void Start()
     {
@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Debug.Log(currentFuel);
         // Use custom gravity scale if rigid body is not already simulating gravity.
         if(!rocket.useGravity)
         {
@@ -43,25 +44,13 @@ public class PlayerController : MonoBehaviour
         float xAxis = Input.GetAxis("Horizontal");
         if (Input.GetButton("Jump"))
         {
-            
-
-            if (xAxis < 0 || xAxis > 0 && !rocketBoost.isPlaying)
-            {
-                rocketBoost.Play();
-            }
-            else if (rocketBoost.isPlaying)
-            {
-                rocketBoost.Stop();
-            }
             ThrustForward();
-
         }
-       
-      
-        
+        else
+        {
+            StopThrust();
+        }
         Rotation(transform, -xAxis * rotationSpeed);
-
-        
     }
 
    
@@ -75,22 +64,22 @@ public class PlayerController : MonoBehaviour
         // Consume and check fuel before we thrust
         currentFuel -= fuelConsumedUpdate;
 
-
-
-        Debug.Log(currentFuel);     // TEST ONLY
-
         if(currentFuel < minFuel)
         {
             currentFuel = minFuel;
+            StopThrust();
             return;
         }
 
         // Add thrust
         Vector3 boost = transform.up * ThrustAmount;
         rocket.AddForce(boost);
-        rocketBoost.Play();
-       
+        rocketBoost.SetActive(true);
+    }
 
+    private void StopThrust()
+    {
+        rocketBoost.SetActive(false);
     }
 
     //Left-right rotation
@@ -107,7 +96,7 @@ public class PlayerController : MonoBehaviour
     //Landing velocity
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "SafeBlocking")
+        if (collision.gameObject.tag == "SafeBlocking" || collision.gameObject.tag == "Fuel")
         {
             return;
         }
@@ -122,7 +111,7 @@ public class PlayerController : MonoBehaviour
     //Landing on side
     private void OnTriggerStay (Collider side)
     {
-        if(side.gameObject.tag == "SafeBlocking")
+        if(side.gameObject.tag == "SafeBlocking" || side.gameObject.tag == "Fuel")
         {
             return;
         }
@@ -130,6 +119,20 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.SetActive(false);
             Time.timeScale = 0;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "Fuel")
+        {
+            currentFuel += 10f;
+            if(currentFuel > maxFuel)
+            {
+                currentFuel = maxFuel;
+            }
+
+            Destroy(other.gameObject);
         }
     }
 

@@ -28,7 +28,7 @@ public class PauseMenu : MonoBehaviour
         }
     }
 
-    private void Resume()
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
         //compassUI.SetActive(true);
