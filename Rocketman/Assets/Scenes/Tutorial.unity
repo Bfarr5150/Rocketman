@@ -366,6 +366,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0b2e0a1693a06c4bb01a8630bd2ac62, type: 3}
+--- !u!1 &603465601 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6604419492366681694, guid: ceadf11a6f0348042be24119a773a224, type: 3}
+  m_PrefabInstance: {fileID: 1743028026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &624441620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1044,11 +1049,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
---- !u!198 &1369754692 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3631680604087528992, guid: ceadf11a6f0348042be24119a773a224, type: 3}
-  m_PrefabInstance: {fileID: 1743028026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1467053379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1184,7 +1184,7 @@ PrefabInstance:
     - target: {fileID: 214820920465544306, guid: 3127b9995636c694099a045fefc6e55e, type: 3}
       propertyPath: rocketBoost
       value: 
-      objectReference: {fileID: 1369754692}
+      objectReference: {fileID: 603465601}
     - target: {fileID: 214820920465544306, guid: 3127b9995636c694099a045fefc6e55e, type: 3}
       propertyPath: gravityScale
       value: 2
