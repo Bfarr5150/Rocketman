@@ -89,7 +89,6 @@ public class PlayerController : MonoBehaviour
         {
             gameObject.SetActive(false);
             Time.timeScale = 0;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
@@ -98,7 +97,6 @@ public class PlayerController : MonoBehaviour
     {
         gameObject.SetActive(false);
         Time.timeScale = 0;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     #endregion
