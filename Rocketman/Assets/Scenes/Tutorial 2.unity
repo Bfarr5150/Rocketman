@@ -307,6 +307,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 28839843}
   m_CullTransparentMesh: 1
+--- !u!1 &121467506 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6604419492366681694, guid: ceadf11a6f0348042be24119a773a224, type: 3}
+  m_PrefabInstance: {fileID: 1743028026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &328546894
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -494,11 +499,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0b2e0a1693a06c4bb01a8630bd2ac62, type: 3}
---- !u!198 &603465604 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 3631680604087528992, guid: ceadf11a6f0348042be24119a773a224, type: 3}
-  m_PrefabInstance: {fileID: 1743028026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &624441620
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,9 +1013,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29f8e3155647ff4a989709dc9af6459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upPoint: {fileID: 0}
-  downPoint: {fileID: 0}
-  speed: 0
+  enemyBody: {fileID: 1177374942}
+  velocity_x: 0
+  velocity_y: 0
 --- !u!136 &1177374941
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1340,7 +1340,7 @@ PrefabInstance:
     - target: {fileID: 214820920465544306, guid: 3127b9995636c694099a045fefc6e55e, type: 3}
       propertyPath: rocketBoost
       value: 
-      objectReference: {fileID: 603465604}
+      objectReference: {fileID: 121467506}
     - target: {fileID: 214820920465544306, guid: 3127b9995636c694099a045fefc6e55e, type: 3}
       propertyPath: gravityScale
       value: 2
@@ -1388,9 +1388,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29f8e3155647ff4a989709dc9af6459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upPoint: {fileID: 0}
-  downPoint: {fileID: 0}
-  speed: 0
+  enemyBody: {fileID: 1706292464}
+  velocity_x: 1
+  velocity_y: 0
 --- !u!136 &1706292469
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2185,7 +2185,7 @@ SpriteRenderer:
   m_Size: {x: 48, y: 27}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &2057685434
@@ -2219,9 +2219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29f8e3155647ff4a989709dc9af6459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upPoint: {fileID: 0}
-  downPoint: {fileID: 0}
-  speed: 0
+  enemyBody: {fileID: 1177374942}
+  velocity_x: 0
+  velocity_y: 0
 --- !u!136 &2129866795
 CapsuleCollider:
   m_ObjectHideFlags: 0
