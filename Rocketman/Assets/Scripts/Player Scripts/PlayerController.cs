@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class PlayerController : MonoBehaviour
         rocket = player.GetComponent<Rigidbody>();
 
         currentFuel = maxFuel;
+        
     }
 
     void FixedUpdate()
@@ -36,12 +38,15 @@ public class PlayerController : MonoBehaviour
             rocket.AddForce(accelerationGravity * gravity * gravityScale, ForceMode.Acceleration);
         }
 
+        //Inputs
         float xAxis = Input.GetAxis("Horizontal");
         if (Input.GetButton("Jump"))
         {
             ThrustForward();
         }
         Rotation(transform, -xAxis * rotationSpeed);
+
+        
     }
 
 
@@ -82,14 +87,18 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.relativeVelocity.magnitude > 10)
         {
-            Destroy(gameObject);
+            gameObject.SetActive(false);
+            Time.timeScale = 0;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 
     //Landing on side
     private void OnTriggerStay (Collider side)
     {
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        Time.timeScale = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     #endregion
