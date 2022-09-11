@@ -229,6 +229,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 812836142}
+    - target: {fileID: 780172096987313960, guid: d0b2e0a1693a06c4bb01a8630bd2ac62, type: 3}
+      propertyPath: m_ClearFlags
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 780172096987313961, guid: d0b2e0a1693a06c4bb01a8630bd2ac62, type: 3}
       propertyPath: m_RootOrder
       value: 0
