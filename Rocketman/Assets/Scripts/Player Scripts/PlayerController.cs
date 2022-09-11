@@ -37,12 +37,10 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        Debug.Log(currentFuel);
         // Use custom gravity scale if rigid body is not already simulating gravity.
-        if(!rocket.useGravity)
+        if (!rocket.useGravity)
         {
             Vector3 accelerationGravity = new Vector3(0, 1, 0);
-            Debug.Log("Fake Gravity");
             rocket.AddForce(accelerationGravity * gravity * gravityScale, ForceMode.Acceleration);
         }
 
@@ -62,6 +60,14 @@ public class PlayerController : MonoBehaviour
         if (currentFuel > minFuel)
         {
             boostBar.SetBoost(currentFuel);
+        }
+
+        // Win condition
+        float distToGround = GetComponent<Collider>().bounds.extents.y;
+        if (Physics.Raycast(player.transform.position, -Vector3.up, distToGround))
+        {
+            Debug.Log("Grounded");
+            CheckWinCondition();
         }
     }
 
@@ -148,6 +154,17 @@ public class PlayerController : MonoBehaviour
             }
 
             Destroy(other.gameObject);
+        }
+    }
+
+    private void CheckWinCondition()
+    {
+        Vector3 velocity = rocket.velocity;
+        float speed = velocity.magnitude;
+        if(speed < .2f)
+        {
+            Debug.Log("Victory!");
+            Time.timeScale = 0f;
         }
     }
 
