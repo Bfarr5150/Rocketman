@@ -1014,8 +1014,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBody: {fileID: 1177374942}
-  velocity_x: 0
-  velocity_y: 0
+  velocity_x: -1
+  velocity_y: -1
 --- !u!136 &1177374941
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2219,9 +2219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f29f8e3155647ff4a989709dc9af6459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyBody: {fileID: 1177374942}
+  enemyBody: {fileID: 2129866796}
   velocity_x: 0
-  velocity_y: 0
+  velocity_y: -0.5
 --- !u!136 &2129866795
 CapsuleCollider:
   m_ObjectHideFlags: 0
