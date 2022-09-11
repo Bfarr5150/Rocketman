@@ -22,7 +22,6 @@ public class PlayerController : MonoBehaviour
     public float fuelConsumedUpdate = .1f;
 
     public GameObject rocketBoost;
-    public GameObject boostBar;
 
     void Start()
     {
