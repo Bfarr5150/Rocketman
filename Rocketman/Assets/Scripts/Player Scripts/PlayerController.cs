@@ -85,18 +85,30 @@ public class PlayerController : MonoBehaviour
     //Landing velocity
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.relativeVelocity.magnitude > 10)
+        if (collision.gameObject.tag == "SafeBlocking")
+        {
+            return;
+        }
+        else if (collision.gameObject.tag == "InstantKill" || collision.relativeVelocity.magnitude > 10)
         {
             gameObject.SetActive(false);
             Time.timeScale = 0;
+            return;
         }
     }
 
     //Landing on side
     private void OnTriggerStay (Collider side)
     {
-        gameObject.SetActive(false);
-        Time.timeScale = 0;
+        if(side.gameObject.tag == "SafeBlocking")
+        {
+            return;
+        }
+        else
+        {
+            gameObject.SetActive(false);
+            Time.timeScale = 0;
+        }
     }
 
     #endregion
