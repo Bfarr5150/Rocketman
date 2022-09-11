@@ -19,6 +19,6 @@ public class SceneManagement : MonoBehaviour
 
     public void StartMainScene()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }
