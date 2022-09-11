@@ -473,11 +473,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92ea98f1f418b01448224016af5f4869, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.402686
+      value: -11.346949
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92ea98f1f418b01448224016af5f4869, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.652182
+      value: 22.615635
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92ea98f1f418b01448224016af5f4869, type: 3}
       propertyPath: m_LocalPosition.z
@@ -485,23 +485,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92ea98f1f418b01448224016af5f4869, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.5295651
+      value: 0.55422527
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92ea98f1f418b01448224016af5f4869, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.46857315
+      value: -0.43912908
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92ea98f1f418b01448224016af5f4869, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5295651
+      value: -0.55422527
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92ea98f1f418b01448224016af5f4869, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.46857315
+      value: -0.43912908
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92ea98f1f418b01448224016af5f4869, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -83.007
+      value: -76.782
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 92ea98f1f418b01448224016af5f4869, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -1190,8 +1190,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBody: {fileID: 1177374942}
+<<<<<<< Updated upstream
   velocity_x: -1
   velocity_y: -1
+=======
+  velocity_x: -1.25
+  velocity_y: -0.5
+>>>>>>> Stashed changes
 --- !u!136 &1177374941
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1565,8 +1570,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyBody: {fileID: 1706292464}
+<<<<<<< Updated upstream
   velocity_x: 0.5
   velocity_y: 1
+=======
+  velocity_x: 1
+  velocity_y: 0.5
+>>>>>>> Stashed changes
 --- !u!136 &1706292469
 CapsuleCollider:
   m_ObjectHideFlags: 0
