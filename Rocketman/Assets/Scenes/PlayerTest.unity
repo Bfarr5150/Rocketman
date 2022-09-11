@@ -525,6 +525,9 @@ MonoBehaviour:
   rotationSpeed: 1
   ThrustAmount: 14
   gravityScale: 2
+  maxFuel: 100
+  minFuel: 0
+  fuelConsumedUpdate: 1
 --- !u!136 &2110814223
 CapsuleCollider:
   m_ObjectHideFlags: 0

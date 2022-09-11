@@ -26,9 +26,6 @@ public class Compass : MonoBehaviour
 
         // Set platform span indicator to cover an equal percentage of the space between boundary indicators as the actual platform spans inbetween the level bounds.
         platformIndicator.sizeDelta = new Vector2(platformWidthPercentage * levelBoundIndicators.sizeDelta.x, platformIndicator.sizeDelta.y);
-
-        // Update platform indicator realitve to platform
-        platformIndicator.anchoredPosition = new Vector2((((platformLoc.localPosition.x - boundaryL.localPosition.x) / stageWidth) * levelBoundIndicators.sizeDelta.x) - (levelBoundIndicators.sizeDelta.x / 2), platformIndicator.anchoredPosition.y);
     }
 
     // Update is called once per frame

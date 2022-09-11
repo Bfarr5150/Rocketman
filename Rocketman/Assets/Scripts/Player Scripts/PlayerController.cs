@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    //Variables
+    // Public Variables
     public GameObject player;
     public Rigidbody rocket;
     public float rotationSpeed;
@@ -13,14 +13,22 @@ public class PlayerController : MonoBehaviour
     public float gravityScale;
     public static float gravity = -9.8f;
 
+    public float maxFuel = 100f;
+    public float minFuel = 0f;
+    float currentFuel;
+    public float fuelConsumedUpdate = .1f;
+
 
     void Start()
     {
         rocket = player.GetComponent<Rigidbody>();
+
+        currentFuel = maxFuel;
     }
 
     void FixedUpdate()
     {
+        // Use custom gravity scale if rigid body is not already simulating gravity.
         if(!rocket.useGravity)
         {
             Vector3 accelerationGravity = new Vector3(0, 1, 0);
@@ -42,6 +50,18 @@ public class PlayerController : MonoBehaviour
     //Apply upwards thrust to slow fall
     private void ThrustForward()
     {
+        // Consume and check fuel before we thrust
+        currentFuel -= fuelConsumedUpdate;
+
+        Debug.Log(currentFuel);     // TEST ONLY
+
+        if(currentFuel < minFuel)
+        {
+            currentFuel = minFuel;
+            return;
+        }
+
+        // Add thrust
         Vector3 boost = transform.up * ThrustAmount;
         rocket.AddForce(boost);
     }
