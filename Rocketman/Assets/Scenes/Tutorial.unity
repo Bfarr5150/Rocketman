@@ -1186,8 +1186,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1369754692}
     - target: {fileID: 214820920465544306, guid: 3127b9995636c694099a045fefc6e55e, type: 3}
+      propertyPath: ThrustAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 214820920465544306, guid: 3127b9995636c694099a045fefc6e55e, type: 3}
       propertyPath: gravityScale
-      value: 2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 214820920465544306, guid: 3127b9995636c694099a045fefc6e55e, type: 3}
       propertyPath: fuelConsumedUpdate
