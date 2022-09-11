@@ -1191,11 +1191,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyBody: {fileID: 1177374942}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   velocity_x: -1
   velocity_y: -1
 =======
   velocity_x: -1.25
   velocity_y: -0.5
+>>>>>>> Stashed changes
+=======
+  velocity_x: -1
+  velocity_y: -1
 >>>>>>> Stashed changes
 --- !u!136 &1177374941
 CapsuleCollider:
@@ -1571,10 +1576,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyBody: {fileID: 1706292464}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   velocity_x: 0.5
   velocity_y: 1
 =======
   velocity_x: 1
+  velocity_y: 0.5
+>>>>>>> Stashed changes
+=======
+  velocity_x: 0.95
   velocity_y: 0.5
 >>>>>>> Stashed changes
 --- !u!136 &1706292469
