@@ -25,16 +25,16 @@ public class Compass : MonoBehaviour
         float platformWidthPercentage = platformWidth / stageWidth;
 
         // Set platform span indicator to cover an equal percentage of the space between boundary indicators as the actual platform spans inbetween the level bounds.
-        platformIndicator.sizeDelta = new Vector2(platformWidthPercentage * levelBoundIndicators.sizeDelta.x, platformIndicator.sizeDelta.y);
+        platformIndicator.sizeDelta = new Vector2(platformWidthPercentage * levelBoundIndicators.sizeDelta.x, levelBoundIndicators.sizeDelta.y);
     }
 
     // Update is called once per frame
     void Update()
     {
         // Update compass needle realtive to percentage of the total distance of playfield player is from the left boundary
-        compassNeedle.anchoredPosition = new Vector2((((playerLoc.localPosition.x - boundaryL.localPosition.x) / stageWidth) * levelBoundIndicators.sizeDelta.x) - (levelBoundIndicators.sizeDelta.x / 2), compassNeedle.anchoredPosition.y);
+        compassNeedle.anchoredPosition = new Vector2((((playerLoc.localPosition.x - boundaryL.localPosition.x) / stageWidth) * levelBoundIndicators.sizeDelta.x) - (levelBoundIndicators.sizeDelta.x / 2), levelBoundIndicators.anchoredPosition.y);
 
         // Update platform indicator realtive to percentage of the total distance of playfield platform is from the left boundary
-        platformIndicator.anchoredPosition = new Vector2((((platformLoc.localPosition.x - boundaryL.localPosition.x) / stageWidth) * levelBoundIndicators.sizeDelta.x) - (levelBoundIndicators.sizeDelta.x / 2), platformIndicator.anchoredPosition.y);
+        platformIndicator.anchoredPosition = new Vector2((((platformLoc.localPosition.x - boundaryL.localPosition.x) / stageWidth) * levelBoundIndicators.sizeDelta.x) - (levelBoundIndicators.sizeDelta.x / 2), levelBoundIndicators.anchoredPosition.y);
     }
 }
